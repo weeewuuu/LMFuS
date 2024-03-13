@@ -1,4 +1,4 @@
-# Language Models Follow-up Script`
+# Language Models Follow-up Script
 ## In this introduction we will look at LMFuS syntax, capabilities and built-ins
 
 ###  Table of contents:
