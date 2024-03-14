@@ -1,0 +1,5 @@
+$$start
+
+config = configure(maxTokens<int> = 10000, temperature<float> = 0.3, topP<float> = 0.8, responseLength<int> = 2000)
+
+$$end

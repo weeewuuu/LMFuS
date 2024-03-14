@@ -1,0 +1,77 @@
+$$start
+
+# Importing a library
+$$import "mathLib.fus" as math
+
+# Global variable
+$$global appName = "LMFuS Calculator"
+
+# Environmental-global variable accessible across all LMFuS environment
+$$envglobal version = "1.0"
+
+# Defining a class
+class Calculator{
+    # Constructor
+    func Calculator(){
+        out: "Calculator initialized"
+    }
+
+    # Method to add numbers
+    func add(int a, int b){
+        return a + b
+    }
+
+    # Method to subtract numbers
+    func subtract(int a, int b){
+        return a - b
+    }
+
+    # Method to multiply numbers
+    func multiply(int a, int b){
+        return a * b
+    }
+
+    # Method to divide numbers
+    func divide(int a, int b){
+        if(b == 0){
+            out: "Error: Division by zero"
+            return 0
+        }
+        return a / b
+    }
+}
+
+# Instantiating the Calculator class
+Calculator calc = new Calculator()
+
+# Using a built-in function
+out: "Welcome to " + appName + ", version " + version
+
+# Input and output for calculator operations
+int a = in<int>: "Enter the first number: "
+int b = in<int>: "Enter the second number: "
+string operation = in: "Choose operation (add, subtract, multiply, divide): "
+
+# Conditional statement for operation selection
+if(operation == "add"){
+    int result = calc.add(a, b)
+    out<int>: "Result: " + result
+}
+elseif(operation == "subtract"){
+    int result = calc.subtract(a, b)
+    out<int>: "Result: " + result
+}
+elseif(operation == "multiply"){
+    int result = calc.multiply(a, b)
+    out<int>: "Result: " + result
+}
+elseif(operation == "divide"){
+    int result = calc.divide(a, b)
+    out<int>: "Result: " + result
+}
+else{
+    out: "Invalid operation selected."
+}
+
+# Ending the script
+$$end

@@ -1,0 +1,14 @@
+$$start
+
+$$import "LLMTools.fus" as LLM
+$$import @coder.fucfg as config
+
+func main(){
+    string codeRequest = in: "Enter your code request: "
+    string generatedCode = LLM.prompt(codeRequest)
+    out: generatedCode
+}
+
+main()
+
+$$end

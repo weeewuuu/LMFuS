@@ -1,0 +1,6 @@
+$$start
+# Configuring a new coder environment
+config = configure(role<string> = "coder", maxTokens<int> = 15000, temperature<float> = 0.5, topP<float> = 0.9, responseLength<int> = 3000)
+
+$$end
+
