@@ -129,7 +129,7 @@ bool
 ```
 
 # Built-in functions
-## There are ... built-in functions in LMFuS: (do not use token names)
+## There are ... built-in functions in LMFuS:
 - ```out```
 - ```in```
 - ```return```
@@ -416,6 +416,32 @@ abstract func functionName(#args){
 }
 ```
 
+# Working with text prompts & LLMs memory
+## You can work with text prompts and LLMs memory in LMFuS with these built-in functions from the LMTools:
+- ```memory(messageIndex<int>)```. messageIndex is a parameter that takes a int. value and returns the message at this index from the LLMs memory
+
+- ```prompt(message<string>)```. This function takes a string value and returns the response from the LLM.
+
+- ```clearMemory()```. This function clears the LLMs memory
+
+- ```clearMemoryAtIndex(index<int>)```. This function clears the LLMs memory at the specified index
+
+- ```configure(role<string> = None; maxTokens<int> = 10**5; temperature<float> = 0.5; topP<float> = 0.5; topK<int> = 0; presencePenalty<float> = 0.5; frequencyPenalty<float> = 0.5; bestOf<int> = 1; logProbs<bool> = False; stop<string> = None; )```. This function takes a string value and returns the response from the LLM.
+
+- ```clearConfig()```. This function clears the LLMs configuration
+
+- ```find(startMessageIndex<int>=-1; seachContent<string>; stopAtFirstFound<bool> = False; returnsInDType<string> = "string")```. This function finds the prompted content starting from the indexed message and returns the message index and the content found
+
+- ```displayConfig(humanFormat<bool> = True; displayHidden<bool> = False; displayDeveloper<bool> = False;)```. This function displays the LLMs configuration
+
+- ```findInMessage(messageIndex<int>; searchContent<string>; stopAtFirstFound<bool> = False; returnsInDType<string> = "string")```. This function finds the prompted content at the indexed message
+
+- ```editMessage(messageIndex<int> = -1; newMessage<string>)```. This function edits the message at the specified index. -1 is the latest message(by default)
+
+- ```displayCached(displayMessages<bool> = True; displaySpecialVariables<bool> = False; displayPointers<bool> = False;)```. This function displays the cached content
+
+- ```clearCached()```. This function clears the cached content
+
 
 # Advanced topics(*-marked)
 ## Tokens marked with asterisk
@@ -673,3 +699,4 @@ myFile.close()
 # Ending the script
 $$end
 ```
+
